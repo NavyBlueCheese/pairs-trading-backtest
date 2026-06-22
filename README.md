@@ -19,9 +19,9 @@ A statistical arbitrage strategy built in Python. Identifies cointegrated stock 
  
 ## What Is Pairs Trading?
  
-Find two stocks whose prices move together over the long run due to a shared economic relationship — same industry, competing products, correlated fundamentals. When the spread between them temporarily diverges beyond its historical range, bet on it reverting: short the overpriced leg, long the underpriced one.
+Find two stocks whose prices move together over the long run due to a shared economic relationship, the same industry, competing products, correlated fundamentals. When the spread between them temporarily diverges beyond its historical range, bet on it reverting: short the overpriced leg, long the underpriced one.
  
-The edge is **mean reversion** — the empirical tendency of the spread to come back — backed by a statistical test that tells us whether that tendency is structural or coincidental.
+The edge is **mean reversion**: the empirical tendency of the spread to come back, backed by a statistical test that tells us whether that tendency is structural or coincidental.
  
 ---
  
@@ -45,7 +45,7 @@ Building a pairs strategy on correlation alone risks holding a position in a spr
  
 Data is split 60/40 by time. Pair selection and hedge ratio estimation happen on the **training set only**. The backtest runs exclusively on the held-out test set.
  
-> Selecting the best pair on the same data you backtest on is data snooping — you chose the pair that happened to work historically, guaranteeing overfitting. The out-of-sample test is the only honest performance measure.
+> Selecting the best pair on the same data you backtest on is data snooping, you chose the pair that happened to work historically, guaranteeing overfitting. The out-of-sample test is the only honest performance measure.
  
 ### Step 2 — Hedge Ratio
  
@@ -105,7 +105,7 @@ The ±2σ entry threshold captures meaningful deviations without requiring extre
  
 **Maximum Drawdown** — largest peak-to-trough decline in the equity curve. What a real investor would have experienced at the worst possible entry point. A great Sharpe with a 40% max drawdown is psychologically unrunnable.
  
-**Win Rate** — percentage of individual trades that closed with positive gross P&L. High win rate is typical of mean-reversion strategies. Always read it alongside average win vs. average loss size — a 90% win rate is meaningless if losses are 10× the wins.
+**Win Rate** — percentage of individual trades that closed with positive gross P&L. A high win rate is typical of mean-reversion strategies. Always read it alongside average win vs. average loss size, which is a 90% win rate, is meaningless if losses are 10× the wins.
  
 ---
  
