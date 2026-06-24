@@ -27,9 +27,9 @@ The edge is **mean reversion**: the empirical tendency of the spread to come bac
  
 ## Why Cointegration, Not Correlation
  
-Correlation measures whether two stocks tend to move in the same direction on a given day. Two highly correlated stocks can still diverge permanently — correlation says nothing about whether they share a long-run equilibrium.
+Correlation measures whether two stocks tend to move in the same direction on a given day. Two highly correlated stocks can still diverge permanently, correlation says nothing about whether they share a long-run equilibrium.
  
-**Cointegration** is a stronger claim. Two series are cointegrated if there exists a linear combination of them that is *stationary* — meaning it has a stable, mean-reverting long-run distribution. This linear combination is the spread. If the pair is cointegrated, there is a statistical gravitational pull drawing the spread back to its mean. That pull is what the strategy profits from.
+**Cointegration** is a stronger claim. Two series are cointegrated if there exists a linear combination of them that is *stationary* meaning it has a stable, mean-reverting long-run distribution. This linear combination is the spread. If the pair is cointegrated, there is a statistical gravitational pull drawing the spread back to its mean. That pull is what the strategy profits from.
  
 Building a pairs strategy on correlation alone risks holding a position in a spread that wanders off and never returns. Cointegration is the mathematical precondition for mean reversion to be real.
  
@@ -66,7 +66,7 @@ z-score = (spread - rolling_mean) / rolling_std
  
 The rolling window is **60 trading days (~3 months)**. Rolling rather than full-sample because the equilibrium spread drifts slowly over time; a 3-month anchor tracks this without excessive noise.
  
-**Lookahead bias prevention:** rolling statistics are shifted by 1 bar before computing the z-score. The signal at the close of day *t* uses only data available before day *t*. Without this shift, today's spread value would appear in its own denominator — a subtle bias that inflates backtest results.
+**Lookahead bias prevention:** rolling statistics are shifted by 1 bar before computing the z-score. The signal at the close of day *t* uses only data available before day *t*. Without this shift, today's spread value would appear in its own denominator which is a subtle bias that inflates backtest results.
  
 ### Step 4 — Entry and Exit Rules
  
